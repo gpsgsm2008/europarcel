@@ -1,0 +1,29 @@
+<div class="card border-info mb-3">
+    <div class="card-header border-info d-flex align-items-center gap-2">
+        <img src="{{ carrier_logo }}" alt="{{ carrier_name }}" style="height:22px;width:auto"> {{ text_locker_details }} {{ carrier_name }}
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-borderless table-sm mb-0">
+                <tr>
+                    <td class="text-muted" style="width:130px">{{ text_locker_name }}</td>
+                    <td>{{ locker_name }}</td>
+                </tr>
+                <tr>
+                    <td class="text-muted">{{ text_locker_address }}</td>
+                    <td>{{ locker_address }}</td>
+                </tr>
+                <tr>
+                    <td class="text-muted">{{ text_locker_locality }}</td>
+                    <td>{{ locker_city }}, {{ locker_county }}</td>
+                </tr>
+                {% if lat and long %}
+                <tr>
+                    <td class="text-muted">{{ text_locker_location }}</td>
+                    <td><a href="https://www.google.com/maps?q={{ lat }},{{ long }}" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> {{ text_view_on_map }}</a></td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+    </div>
+</div>
